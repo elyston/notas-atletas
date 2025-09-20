@@ -9,15 +9,17 @@ class Usuario{
         return this.esportistas.notas.sort()
     }
     exibirMedia(){
-        let media = 0
         for(let i = 0; i < this.esportistas.length; i++){
             console.log(`atleta: ${this.esportistas[i].nome}`)
             console.log(`Notas obtidas: ${this.esportistas[i].notas.join(",")}`)
+            media = 0
             this.esportistas[i].notas.forEach(function(nota){
                 media += Number.parseFloat(nota)
             })
+            console.log(`Média válida: ${media}\n`) 
+
         }
-        return `media: ${media}`
+        
     }
 
 }
@@ -41,4 +43,5 @@ let atletas = [{
 }]
 
 
-console.log(new Usuario(atletas).exibirMedia())
+let X = new Usuario(atletas)
+X.exibirMedia()
